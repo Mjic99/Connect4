@@ -14,7 +14,7 @@ import java.util.*;
 public class Clasesita {
     
     public static void main(String[] args) {
-        try{
+        
         Scanner xd = new Scanner(System.in);
         
         ArrayList<ArrayList<String>> t = new ArrayList<>();
@@ -55,10 +55,7 @@ public class Clasesita {
             lvl.set(a, lvl.get(a)-1);
             
         }
-        }
-        catch(Exception e){
-            
-        }
+        
     }
     
     public static void Draw(ArrayList<ArrayList<String>> table){
