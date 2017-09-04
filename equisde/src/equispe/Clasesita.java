@@ -12,12 +12,18 @@ import java.util.*;
  * @author r4105
  */
 public class Clasesita {
+    
     public static void main(String[] args) {
+        try{
         Scanner xd = new Scanner(System.in);
         
         ArrayList<ArrayList<String>> t = new ArrayList<>();
         
         ArrayList<Integer> lvl = new ArrayList<>();
+        
+        int a;
+            
+        ArrayList<String> peperoni = new ArrayList<>();
         
         for(int i=0; i<6; i++){
             lvl.add(5);
@@ -28,20 +34,39 @@ public class Clasesita {
             t.add(salami);
         }
         
-        
         while(true){
-            t.forEach((l)->{
+            
+            Draw(t);
+            
+            System.out.println("ROJOS:");
+            a = xd.nextInt();
+            peperoni = t.get(lvl.get(a));
+            peperoni.set(a, "R");
+            t.set(lvl.get(a), peperoni);
+            lvl.set(a, lvl.get(a)-1);
+            
+            Draw(t);
+            
+            System.out.println("AMARILLOS:");
+            a=xd.nextInt();
+            peperoni = t.get(lvl.get(a));
+            peperoni.set(a, "A");
+            t.set(lvl.get(a), peperoni);
+            lvl.set(a, lvl.get(a)-1);
+            
+        }
+        }
+        catch(Exception e){
+            
+        }
+    }
+    
+    public static void Draw(ArrayList<ArrayList<String>> table){
+        table.forEach((l)->{
                 l.forEach((jaja) ->{
                     System.out.print(jaja+" ");
                 });
                 System.out.print("\n");
             });
-            System.out.println("ROJOS:");
-            int a = xd.nextInt();
-            ArrayList<String> peperoni = new ArrayList<>();
-            peperoni = t.get(lvl.get(a));
-            
-        }
     }
-    
 }
