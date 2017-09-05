@@ -39,19 +39,20 @@ public class Clasesita {
             Draw(t);
             
             System.out.println("ROJOS:");
-            
             a = xd.nextInt();
-            
-            Turn(t, lvl, a, "R");
+            peperoni = t.get(lvl.get(a));
+            peperoni.set(a, "R");
+            t.set(lvl.get(a), peperoni);
+            lvl.set(a, lvl.get(a)-1);
             
             Draw(t);
             
             System.out.println("AMARILLOS:");
-            
-            a = xd.nextInt();
-            
-            
-            Turn(t, lvl, a, "A");
+            a=xd.nextInt();
+            peperoni = t.get(lvl.get(a));
+            peperoni.set(a, "A");
+            t.set(lvl.get(a), peperoni);
+            lvl.set(a, lvl.get(a)-1);
             
         }
         
@@ -64,24 +65,5 @@ public class Clasesita {
                 });
                 System.out.print("\n");
             });
-    }
-    
-    public static void Turn(ArrayList<ArrayList<String>> t, ArrayList<Integer> lvl, int a, String col){
-        try{
-                ArrayList<String> peperoni = new ArrayList<>();
-                peperoni = t.get(lvl.get(a));
-                peperoni.set(a, col);
-                t.set(lvl.get(a), peperoni);
-                lvl.set(a, lvl.get(a)-1);
-            }
-        catch(ArrayIndexOutOfBoundsException e){
-            System.out.println("No puedes colocar fichas aquí");
-        }
-        catch(IndexOutOfBoundsException x){
-            System.out.println("Fuera del tablero!");
-        }
-        catch(InputMismatchException ex){
-            System.out.println("Valor no válido");
-        }
     }
 }
